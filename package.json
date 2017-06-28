@@ -1,0 +1,19 @@
+{
+  "name": "atom-chat-codes",
+  "main": "./lib/chat-codes",
+  "version": "0.0.1",
+  "description": "A short description of your package",
+  "keywords": [],
+  "activationCommands": {},
+  "repository": "https://github.com/soney/atom-chat-codes",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "pusher": "^1.5.1",
+    "pusher-js": "^4.1.0",
+    "underscore": "^1.8.3"
+  }
+}

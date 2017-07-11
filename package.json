@@ -14,6 +14,7 @@
     "jquery": "^3.2.1",
     "pusher": "^1.5.1",
     "pusher-js": "^4.1.0",
+    "socket.io": "^2.0.3",
     "underscore": "^1.8.3"
   }
 }

@@ -59,3 +59,65 @@ atom-text-editor::shadow {
         position: relative;
     }
 }
+
+ul.members {
+    list-style: none;
+    padding: 0px;
+    display: inline-block;
+}
+li.member {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+ul.members {
+    list-style: none;
+    padding: 0px;
+    display: inline-block;
+    li.member {
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 5px;
+
+        .user {
+            font-size: 1em;
+            display: inline-block;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+
+            &.typing {
+                -webkit-animation: jiggle 0.2s infinite;
+                -moz-animation-duration: 0.2s;
+                -moz-animation-name: jiggle;
+                -moz-animation-iteration-count: infinite;
+                -webkit-transform: rotate(-3deg);
+                -moz-transform: rotate(-3deg);
+            }
+
+            &.typing::after {
+                content: '...';
+            }
+            &.typed::after {
+                content: '...'
+            }
+        }
+    }
+}
+@-moz-keyframes jiggle {
+    0% {
+        -moz-transform: rotate(-1deg);
+    }
+    50% {
+        -moz-transform: rotate(1deg);
+    }
+}
+
+@-webkit-keyframes jiggle {
+    0% {
+        transform: rotate(-1deg);
+    }
+    50% {
+        transform: rotate(1deg);
+    }
+}

@@ -4,84 +4,113 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-@red-color: @syntax-color-removed;
-@green-color: @syntax-color-added;
-@blue-color: @syntax-color-renamed;
+@user1-color: @ui-site-color-1;
+@user2-color: @ui-site-color-2;
+@user3-color: @ui-site-color-3;
+@user4-color: @ui-site-color-4;
+@user5-color: @ui-site-color-5;
 
 atom-text-editor::shadow {
-    .gutter .line-number {
-        &.line-number-green {
-            color: #fff;
-            background-color: @green-color;
-        }
 
-        &.line-number-blue {
-            color: #fff;
-            background-color: @blue-color;
-        }
-
-        &.line-number-red {
-            color: #fff;
-            background-color: @red-color;
-        }
-    }
-
-    .line {
-        &.line-green {
-            background-color: @green-color;
-        }
-
-        &.line-blue {
-            background-color: @blue-color;
-        }
-
-        &.line-red {
-            background-color: @red-color;
-        }
-    }
-
-    .highlight-green .region {
-        background-color: @green-color;
-    }
-
-    .highlight-blue .region {
-        background-color: @blue-color;
-        border: 5px solid blue;
-    }
-
-    .highlight-red .region {
-        background-color: @red-color;
-        border: 5px solid red;
+    .highlight .region {
+        opacity: 0.3;
+        &.user-1 { background-color: @user1-color; }
+        &.user-2 { background-color: @user2-color; }
+        &.user-3 { background-color: @user3-color; }
+        &.user-4 { background-color: @user4-color; }
+        &.user-5 { background-color: @user5-color; }
     }
 
     .remoteCursor {
-        border-left: 2px solid orange;
+        border-left-width: 2px;
+        border-left-style: solid;
+        &.user-1 { border-left-color: @user1-color; }
+        &.user-2 { border-left-color: @user2-color; }
+        &.user-3 { border-left-color: @user3-color; }
+        &.user-4 { border-left-color: @user4-color; }
+        &.user-5 { border-left-color: @user5-color; }
+
         position: relative;
     }
 }
 
 .chat-codes-sidebar {
+    padding-top: @component-padding;
     height: 100%;
     .chat-window {
         height: 100%;
         display: flex;
         flex-direction: column;
+
+        .channel-name {
+            user-select: all;
+            -webkit-user-select: all;
+            padding: @component-padding/2;
+            padding-left: @component-padding;
+        }
+
         .messages {
-            flex-grow: 1;
             overflow: auto;
+
+            .empty-messages {
+                color: @text-color-subtle;
+                text-align: center;
+                padding: @component-padding;
+            }
+
+            .typing-status {
+                color: @text-color-subtle;
+                padding: @component-padding;
+                padding-top: 0px;
+                &.idle {
+                    display: none;
+                }
+                &.typing::after {
+                    content: ' is typing...'
+                }
+                &.typed {
+                    display: none;
+                }
+            }
+
+            border-top: 1px solid @base-border-color;
+            background-color: @panel-heading-background-color;
+            flex-grow: 1;
             ul.message-group-list {
                 list-style: none;
-                padding: 0px;
+                padding: @component-padding/2;
                 li.message-group {
                     margin-top: 10px;
                     margin-bottom: 10px;
-                    border: 1px solid blue;
+                    border-width: 1px;
+                    border-style: solid;
+                    // border: 1px solid @user1-color;//@base-border-color;
+                    border-radius: @component-border-radius;
+                    &.user-1 { border-color: @user1-color; }
+                    &.user-2 { border-color: @user2-color; }
+                    &.user-3 { border-color: @user3-color; }
+                    &.user-4 { border-color: @user4-color; }
+                    &.user-5 { border-color: @user5-color; }
                     .message-group-header {
+                        border-top-left-radius: @component-border-radius;
+                        border-top-right-radius: @component-border-radius;
+                        background-color: @inset-panel-background-color;
+
+                        border-bottom-style: solid;
+                        border-bottom-width: 1px;
+
+                        &.user-1 { border-bottom-color: @user1-color; }
+                        &.user-2 { border-bottom-color: @user2-color; }
+                        &.user-3 { border-bottom-color: @user3-color; }
+                        &.user-4 { border-bottom-color: @user4-color; }
+                        &.user-5 { border-bottom-color: @user5-color; }
+
+                        padding: @component-padding/2;
                         .sender {
                             font-weight: bold;
                         }
                         .timestamp {
-                            opacity: 0.7;
+                            color: @text-color-subtle;
                             &::before {
                                 content: ' (';
                             }
@@ -89,24 +118,24 @@ atom-text-editor::shadow {
                                 content: ')';
                             }
                         }
-                        padding-bottom: 3px;
-                        margin-top: 3px;
-                        margin-bottom: 3px;
-                        border-bottom: 1px solid red;
                     }
                     ul.message-list {
+                        background-color: @pane-item-background-color;
                         list-style: none;
                         padding: 0px;
                         li.message {
                             margin-top: 1px;
                             margin-bottom: 1px;
-                            padding-top: 1px;
-                            padding-bottom: 1px;
-                            border-bottom: 1px solid purple;
+                            border-bottom: 1px solid @base-border-color;
+                            padding: @component-padding/2;
+                            color: @text-color;
                             &:last-child {
                                 border-bottom: none;
+                                margin-bottom: 0px;
                             }
                         }
+                        border-bottom-left-radius: @component-border-radius;
+                        border-bottom-right-radius: @component-border-radius;
                     }
                 }
             }
@@ -114,18 +143,42 @@ atom-text-editor::shadow {
 
         ul.members {
             list-style: none;
-            padding: 0px;
+            padding: @component-padding;
+            padding-bottom: 0px;
+            padding-top: 3px;
             display: inline-block;
             li.member {
                 display: inline-block;
-                margin-left: 5px;
-                margin-right: 5px;
+                margin-left: @component-padding/2;
+                margin-right: @component-padding/2;
+                margin-top: 2px;
+                margin-bottom: 2px;
+                // &:first-child {
+                //     margin-left: 0px;
+                // }
+                &:last-child {
+                    margin-right: 0px;
+                }
 
                 .user {
                     font-size: 1em;
                     display: inline-block;
                     -webkit-transform: rotate(0deg);
                     -moz-transform: rotate(0deg);
+                    padding: 2px;
+                    padding-left: 3px;
+                    padding-right: 3px;
+                    border-radius: 2px;
+                    background-color: @button-background-color;
+
+                    border-style: solid;
+                    border-width: 1px;
+
+                    &.user-1 { border-color: @user1-color; }
+                    &.user-2 { border-color: @user2-color; }
+                    &.user-3 { border-color: @user3-color; }
+                    &.user-4 { border-color: @user4-color; }
+                    &.user-5 { border-color: @user5-color; }
 
                     &.typing {
                         -webkit-animation: jiggle 0.2s infinite;
@@ -145,6 +198,12 @@ atom-text-editor::shadow {
                 }
             }
         }
+
+        .user-1 { color: @user1-color; }
+        .user-2 { color: @user2-color; }
+        .user-3 { color: @user3-color; }
+        .user-4 { color: @user4-color; }
+        .user-5 { color: @user5-color; }
     }
 }
 @-moz-keyframes jiggle {

@@ -13,6 +13,8 @@
   "dependencies": {
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
+    "pty.js": "https://github.com/platformio/pty.js/tarball/prebuilt",
+    "term.js": "https://github.com/jeremyramin/term.js/tarball/master",
     "pusher": "^1.5.1",
     "pusher-js": "^4.1.0",
     "socket.io": "^2.0.3",

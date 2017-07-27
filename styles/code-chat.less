@@ -37,6 +37,12 @@ atom-text-editor::shadow {
 .chat-codes-sidebar {
     padding-top: @component-padding;
     height: 100%;
+    .chat-codes-terminal {
+        height: 200px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background-color: #222;
+    }
     .chat-window {
         height: 100%;
         display: flex;

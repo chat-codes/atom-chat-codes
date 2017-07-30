@@ -1,4 +1,10 @@
-# code-chat package
+# chat.codes Atom plugin
 
-a short description of your package.
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+![chat.codes screenshot](https://github.com/soney/atom-chat-codes/blob/master/screenshot.gif?raw=true)
+
+## Build
+
+```
+npm install .
+```
+Link to this directory in your atom plugins directory.

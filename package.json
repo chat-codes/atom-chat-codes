@@ -11,7 +11,7 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "chat-codes-services": "https://github.com/soney/chat-codes-services.git",
+    "chat-codes-services": "https://github.com/soney/chat-codes-services/tarball/master",
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
     "pty.js": "https://github.com/platformio/pty.js/tarball/prebuilt",

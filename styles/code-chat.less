@@ -12,6 +12,7 @@
 
 atom-text-editor::shadow {
 
+
     .highlight .region {
         &.user-1 { opacity: 0.3; background-color: @user1-color; }
         &.user-2 { opacity: 0.3; background-color: @user2-color; }
@@ -36,6 +37,14 @@ atom-text-editor::shadow {
 .chat-codes-sidebar {
     padding-top: @component-padding;
     height: 100%;
+
+    .chat-input{
+      height: 100px;
+      softWrapColumn: 20;
+      softWrap: true;
+      softWrapHangingIndent: 0;
+    }
+
     .chat-codes-terminal {
         height: 200px;
         overflow-y: auto;

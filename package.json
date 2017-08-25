@@ -12,14 +12,15 @@
   },
   "dependencies": {
     "chat-codes-services": "file:../chat-codes-services",
+    "escape-string-regexp": "^1.0.5",
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
-    "pusher": "^1.5.1",
     "pty.js": "https://github.com/platformio/pty.js/tarball/prebuilt",
+    "pusher": "^1.5.1",
     "pusher-js": "^4.1.0",
+    "showdown": "^1.7.1",
     "socket.io": "^2.0.3",
     "underscore": "^1.8.3",
-    "xterm": "^2.8.1",
-    "showdown":"^1.7.1"
+    "xterm": "^2.9.2"
   }
 }

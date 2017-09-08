@@ -1,0 +1,1 @@
+export ATOM_HOME=~/.atom-beta;atom-beta --dev ~/cc_test/file1.py;export ATOM_HOME=''
